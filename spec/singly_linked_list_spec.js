@@ -1,10 +1,9 @@
-var DoublyLinkedList = require("../doubly_linked_list");
+var SinglyLinkedList = require("../singly_linked_list");
 var list;
 
-describe("DoublyLinkedList", function() {
-
+describe("Singly Linked List", function() {
   beforeEach(function() {
-    list = new DoublyLinkedList();
+    list = new SinglyLinkedList();
   });
 
   describe("push", function() {
@@ -118,7 +117,12 @@ describe("DoublyLinkedList", function() {
       expect(list.length).toEqual(5);
       expect(list.remove(3)).toEqual(4);
       expect(list.length).toEqual(4);
+      expect(list.get(0)).toEqual(1);
+      expect(list.get(1)).toEqual(2);
+      expect(list.get(2)).toEqual(3);
+      expect(list.get(3)).toEqual(5);
+      expect(list.get(4)).toEqual(undefined);
+
     });
   });
 });
-

@@ -21,7 +21,7 @@ function DoublyLinkedList() {
 }
 
 DoublyLinkedList.prototype.__getNodeAt = function(index) {
-  if (index >= this.length || index < 0) return null;
+  if (typeof index !== "number" || index >= this.length || index < 0) return null;
 
   var mid = this.length / 2;
   var goForward = true;
@@ -72,7 +72,7 @@ DoublyLinkedList.prototype.clear = function() {
 };
 
 DoublyLinkedList.prototype.pop = function() {
-  if (!this.head) return null;
+  if (!this.head) return undefined;
   if (this.length === 1) {
     var value = this.head.val;
     this.clear();
@@ -117,7 +117,7 @@ DoublyLinkedList.prototype.shift = function() {
 
 DoublyLinkedList.prototype.get = function(index) {
   var node = this.__getNodeAt(index);
-  if (!node) return null;
+  if (!node) return undefined;
   return node.val;
 };
 
