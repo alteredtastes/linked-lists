@@ -126,6 +126,21 @@ DoublyLinkedList.prototype.set = function(index, val) {
   if (node) node.val = val;
 };
 
+DoublyLinkedList.prototype.insert = function(index, val) {
+  if (index < 0 || index > this.length) return;
+  if (index === 0) { return this.unshift(val); }
+  else if (index === this.length) { return this.push(val); }
+  else {
+    var node = this.__getNodeAt(index);
+    var prevNode = node.prev;
+    var newNode = new Node(val, prevNode, node);
+    prevNode.next = newNode;
+    node.prev = newNode;
+    this.length++;
+    return this;
+  }
+};
+
 DoublyLinkedList.prototype.remove = function(index) {
   if (index === 0) return this.shift();
   if (index === this.length - 1) return this.pop();

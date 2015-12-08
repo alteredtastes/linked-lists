@@ -91,6 +91,31 @@ describe("DoublyLinkedList", function() {
     });
   });
 
+  describe("insert", function() {
+    it("inserts a value into an empty list", function() {
+      list.insert(0, 5);
+      expect(list.length).toBe(1);
+      expect(list.get(0)).toBe(5);
+    });
+
+    it("inserts a value into a list with values", function() {
+      list.push(1).push(3).insert(1, 5);
+      expect(list.length).toBe(3);
+      expect(list.get(0)).toBe(1);
+      expect(list.get(1)).toBe(5);
+      expect(list.get(2)).toBe(3);
+    });
+
+    it("allows inserting at the end of the list", function() {
+      list.push(1).push(3).push(7).insert(3, 5);
+      expect(list.length).toBe(4);
+      expect(list.get(0)).toBe(1);
+      expect(list.get(1)).toBe(3);
+      expect(list.get(2)).toBe(7);
+      expect(list.get(3)).toBe(5);
+    });
+  })
+
   describe("remove", function() {
     it("removes the first element in a list of size 1", function() {
       list.push(1);
