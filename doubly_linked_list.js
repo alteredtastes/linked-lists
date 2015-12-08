@@ -21,33 +21,7 @@ function DoublyLinkedList() {
 }
 
 DoublyLinkedList.prototype.__getNodeAt = function(index) {
-  if (typeof index !== "number" || index >= this.length || index < 0) return null;
 
-  var mid = this.length / 2;
-  var goForward = true;
-  if (index > mid) goForward = false;
-
-  var i;
-  var curNode;
-  if (goForward) {
-    i = 0;
-    curNode = this.head;
-  } else {
-    i = this.length - 1;
-    curNode = this.tail;
-  }
-
-  while (i != index) {
-    if (goForward) {
-      curNode = curNode.next;
-      i++;
-    } else {
-      curNode = curNode.prev;
-      i--;
-    }
-  }
-
-  return curNode;
 };
 
 DoublyLinkedList.prototype.push = function(val) {
@@ -89,73 +63,27 @@ DoublyLinkedList.prototype.pop = function() {
 };
 
 DoublyLinkedList.prototype.unshift = function(val) {
-  if (!this.head) {
-    return this.push(val);
-  }
 
-  var newNode = new Node(val);
-
-  this.head.prev = newNode;
-  newNode.next = this.head;
-  this.head = newNode;
-  this.length++;
-
-  return this;
 };
 
 DoublyLinkedList.prototype.shift = function() {
-  if (this.length <= 1) return this.pop();
 
-  var value = this.head.val
-  var nextNode = this.head.next;
-  nextNode.prev = null;
-  this.head.next = undefined;
-  this.head = nextNode;
-  this.length--;
-  return value;
 };
 
 DoublyLinkedList.prototype.get = function(index) {
-  var node = this.__getNodeAt(index);
-  if (!node) return undefined;
-  return node.val;
+
 };
 
 DoublyLinkedList.prototype.set = function(index, val) {
-  var node = this.__getNodeAt(index);
-  if (node) node.val = val;
+
 };
 
 DoublyLinkedList.prototype.insert = function(index, val) {
-  if (index < 0 || index > this.length) return;
-  if (index === 0) { return this.unshift(val); }
-  else if (index === this.length) { return this.push(val); }
-  else {
-    var node = this.__getNodeAt(index);
-    var prevNode = node.prev;
-    var newNode = new Node(val, prevNode, node);
-    prevNode.next = newNode;
-    node.prev = newNode;
-    this.length++;
-    return this;
-  }
+
 };
 
 DoublyLinkedList.prototype.remove = function(index) {
-  if (index === 0) return this.shift();
-  if (index === this.length - 1) return this.pop();
-  
-  var node = this.__getNodeAt(index);
-  if (node) {
-    var prev = node.prev;
-    var next = node.next;
-    prev.next = next;
-    next.prev = prev;
-    node.prev = undefined;
-    node.next = undefined;
-    this.length--;
-    return node.val;
-  }
+
 };
 
 module.exports = DoublyLinkedList;
