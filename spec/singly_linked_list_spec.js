@@ -1,4 +1,5 @@
-var SinglyLinkedList = require("../singly_linked_list");
+// var SinglyLinkedList = require("../singly_linked_list");
+var SinglyLinkedList = require("../empty_singly_linked_list");
 var list;
 
 describe("Singly Linked List", function() {
