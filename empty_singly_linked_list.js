@@ -43,4 +43,12 @@ SinglyLinkedList.prototype.remove = function(index) {
   
 };
 
+SinglyLinkedList.prototype.reverse = function() {
+
+};
+
+SinglyLinkedList.prototype.reverseRecursive = function() {
+
+};
+
 module.exports = SinglyLinkedList;

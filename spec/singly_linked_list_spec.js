@@ -126,4 +126,18 @@ describe("Singly Linked List", function() {
 
     });
   });
+
+  describe("reverse", function(){
+    it("It should...", function(){
+      
+    });
+  });
+
+
+  describe("reverseRecursive", function(){
+    it("It should...", function(){
+      
+    });
+  });
+
 });
