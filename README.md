@@ -2,7 +2,7 @@
 
 ### Part 1 - Singly Linked Lists
 
-The singly linked list is fully implemented in javascript.  To run just the tests for a singly linked list, run `jasmine spec/singly_linked_list_spec.js` in the root of the project.
+The singly linked list is fully implemented in javascript.  To run just the tests for a singly linked list, run `mocha test/singly_linked_list_spec.js` in the root of the project.
 
 Try to understand the code for a singly linked list.  Do not move on to the doubly linked list section until a singly linked list makes sense.  If you are stuck on a function, implement more tests to verify how things are working.  Try using the singly linked list to get an idea of the interface.
 
