@@ -1,5 +1,4 @@
-// var SinglyLinkedList = require("../singly_linked_list");
-var SinglyLinkedList = require("../empty_singly_linked_list");
+var SinglyLinkedList = require("../singly_linked_list");
 var list;
 var expect = require("chai").expect
 
@@ -32,7 +31,7 @@ describe("Singly Linked List", function() {
 
   describe("pop", function() {
     it("returns undefined when called on an empty list", function() {
-      expect(list.pop()).toBe(undefined);
+      expect(list.pop()).to.equal(undefined);
     });
 
     it("returns the value at the end of the list", function() {
