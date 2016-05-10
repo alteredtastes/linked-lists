@@ -23,10 +23,9 @@ describe("DoublyLinkedList", function() {
 
     it("stores the correct values", function() {
       list.push(2).push(4)
-      expect(list.pop()).to.equal(4);
-      expect(list.length).to.equal(1);
-      expect(list.pop()).to.equal(2);
-      expect(list.length).to.equal(0);
+      expect(list.head.val).to.equal(2);
+      expect(list.length).to.equal(2);
+      expect(list.head.next.val).to.equal(4);
     })
   });
 
