@@ -35,10 +35,10 @@ describe("Singly Linked List", function() {
     });
 
     it("returns the value at the end of the list", function() {
-      list.push(4).push(5);
+      list.push(4).push(5).push(9);
+      expect(list.length).to.equal(3);
+      expect(list.pop()).to.equal(9);
       expect(list.length).to.equal(2);
-      expect(list.pop()).to.equal(5);
-      expect(list.length).to.equal(1);
     });
   });
 
